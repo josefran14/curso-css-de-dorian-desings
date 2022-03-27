@@ -1,0 +1,103 @@
+/* selectores */
+
+/* 
+Selectores Simples
+  Selectores elementales
+     selector universal -> *
+     selector de tipo o etiqeuta -> nombre de la etiqueta
+Selectores de atributo
+     id -> id del elemento
+     clase -> clase del elemento
+     otros atributos.
+      [atributo]
+       [atributo=valor]
+       [atributo*=valor]
+       [atributo$=valor]
+       [atributo!=valor]
+
+Selectores Compuestos
+     Selectores agrupados -> Se agrupan los selectores
+     separados por comas y se escribe el estilo una
+     sola vez
+    Selectores combinadores
+    selector descendiente
+    selector de hermano siguiente + selecciona al hermano siguiente
+    adyacente
+    selector de hermanos siguientes ~ selecciona a todos los heramnos
+    siguientes
+    selector de hijo directo -> selecciona solo los hijos
+    directos
+   */
+   
+   .container > p{
+       background-color: tomato;
+   }
+
+   .text-2 + h2{
+       /* background-color: tomato; */
+   }
+
+   .text-2 ~ h2{
+       /* background-color: teal; */
+   }
+
+/* .text,
+.text-2,
+.text-3,
+.text-4{
+    background-color: steelblue;
+} */
+
+/* *{
+    background-color: lightcoral;
+}
+
+h1{
+    background-color: lightcyan;
+}
+
+p{
+    background-color: lightgreen;
+}
+
+ul{
+    background-color: red;
+}
+
+li{
+    background-color: skyblue;
+} */
+
+/* #title{
+    background-color: lightgreen;
+}
+
+.title{
+    background-color: lightsalmon;
+}
+
+.text{
+    background-color: lightgreen;
+} */
+
+
+
+/* [href]{
+    background-color: mediumorchid;
+}
+
+[href="https://www.youtube.com"]{
+    background-color: orangered;
+}
+
+[href*=color]{
+    background-color: blue;
+}
+[href$=verde]{
+    background-color: brown;
+}
+
+[lang|=en]{
+    background-color: magenta;
+} */
+    

@@ -1,0 +1,137 @@
+/* 
+   las medidas en CSS se pueden agrupar en 2 grupos, absolutas y relativas
+
+   las medidas absolutas NO CAMBIAN y siempre mantendran su tamaño independientemente
+   del disposiito o interaccion del usuario
+   lo mas usado es px (pixeles) cuya medida es 1/96 de lin, pero existen otras como::
+       cm (centimetros) -> 1cm = 96px/2,54
+       mm (milimetros) -> 1mm = 1/10 de 1cm
+       Q (cuartto de milimetro) -> 1Q = 1/40 de 1cm
+       in (inches, pulgadas) -> 1in =2,54 = 96px
+       pc (picas) -> 1pc = 1/16 de 1in
+       pt (puntos) -> 1pt = 1/72 de 1in
+
+    las medidas raltivas SIEMPER dependen de un contexto son las que se recomienda 
+     utilizar en la gran mayoria de ocasiones porque nos van a permitir que todos los
+     elementos escalen proporcionalmente
+     las mas usadas son em, rem, %, vw, vh, vmin, y vmax aunque tenemos otras como:
+       ex -> altura x de la fuente del elemento 
+       ch -> la medida del ancho del glifo "0" de la letra del elemento
+       ih -> altura de la linea del elemento
+
+       rem -> corresponde a la medida de la "m" de la raiz del
+       documento (html)
+
+       em -> corresponde a la medida de la "m" del contexto
+       donde nos encontremos
+
+       el estandar del tamaño de fuente por defecto en la raiz
+       del documento es 16px, Y NO ES RECOMENDABLE MODIFICARLO
+
+       NOTA: tanto "em" como "rem" se calcula en base a la
+       propiedad font-size (tamaño de fuente)
+
+       % -> cuando usamos porcentaje usamos de referencia el
+       tamaño del contenedor y el navegador calcula ese
+       porcentaje. esto no ocurre cuando usamos transform
+
+       auto -> cuando usamos auto le pedimos al navegador que
+       calcule en funcion del espacio disponible
+
+       HEIGTH:
+         % -> cuando estamos dentro de un contenedor, este tiene
+         que tener un alto declarado, si no no podra calcular el
+         porcentaje. si se le aplica una medida con porcentaje
+         se sustituira automaticamente por auto 
+
+         auto -> cuando utilizamos auto el auto lo calculara el
+         navegador en base al contenido del elemento 
+
+         NOTA: Heigth es una propiedad que teneis que usar con
+         mucho cuidado. si no es necesario establecer un alto, dejad
+         que el contenido sea el que decida el alto del elemento
+
+         VIEWPORT
+            El viewport es el area util donde se mostrara la pagina
+            web. IMPORTANTE, tened en cuenta que es el area visible
+            sin hacer scroll 
+            podemos usar el viewport como medida de varias formas:
+              vw -> Viewport width, hace referencia al ancho del
+              viewport
+              vh -> Viewport heigth, hace referencia al alto del
+              viewport
+              vmax -> Utiliza el valor mas grande entre el ancho y
+              el alto del viewport
+              vmin -> Utiliza el valor mas pequeño entre el ancho y
+              el alto del viewport
+
+              1vw = 1% del ancho del viewport
+              1vh = 1% swl alto del viewport
+              1vmin = 1% del valor que sea mas pequeño del viewport
+              1vmax = 1% del valor que sea mas grande del viewport
+
+        Limitadores al ancho y alto
+           Cuando establecemos un width y/o un heigth con una medida
+           que es relativa, es posible que no queramos que se 
+           respete esa medida en todos lo casos
+           Para ella tenemos propiedades que limitan esas medidas:
+             min-width: Indica el ancho minimo que puede alcanzar el
+             elemento 
+             max-width: Indica el ancho maximo que puede alcanzar el
+             elemento
+             min-heigth: Indica el alto minimo que puede alcanzar el
+             elemento
+             max-heigth: Indica el alto maximo que puede alcanzar el
+             elemento
+*/
+
+html{
+    height: 300px;
+}
+
+body{
+    margin: 0;
+    background-color: #333;
+    color: lightcoral;
+} 
+
+ /* .header{
+    background-color: lightskyblue;
+    text-align: center;
+    height: 100vh; */
+     
+
+
+.box{
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    height: 60vw;
+    max-height: 300px;
+    min-height: 100px;
+    /* padding-bottom: 30px; */
+    background-color: lightgreen
+}
+
+  /* .box-children{
+    position: sticky;
+    top: 0;
+    /* width: 50%;
+    width: 50vw; */
+     /* height: 150px;  */
+    /* background-color: lightseagreen;  */ 
+
+
+ 
+
+/* .title{
+    font-size: 3rem;
+} */
+
+/* .link{
+    background-color: lightcoral;
+    color: #333;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    font-size: 2rem;
+} */

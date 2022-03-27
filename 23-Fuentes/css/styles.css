@@ -1,0 +1,156 @@
+/* 
+     La tipografia es la ciencia que estudia el diseño y uso de
+     los tipos de letras
+
+     Las fuentes son tipos especificos de letra
+
+     Los glifos son cada uno de los dibujos que representan cada
+     simbolo de la fuente, incluidos los espacios
+
+     LOs estilos de fuente son las modificaciones que se hacen a
+     las fuentes, como el grosor o la inclinacion
+
+     Familia tipografica, son las diferentes fuentes que
+     pertenecen a una misma fuente base
+
+     Cuando usamos una propiedad text-* estamos afectando a un
+     bloque completo
+
+     Cuando utilizamos una propiedad font-* afectamos a la
+     fuente del texto
+
+     Fuentes predeterminadas, son las fuentes que se consideran
+     seguras ya que son genericas y no establecen una familia
+     tipografica, si no un estilo de fuente
+        serif: fuentes que tienen serifas (adornos en los
+        caracteres)
+        sans-serif: fuentes sin serifas
+        monospace: fuentes que tienen el mismo espaciado entre
+        todos sus caracteres
+        cursive: fuentes que pretenden emular escritura a mano,
+        con ligaduras y trazos fluidos
+        fantasy: fuentes que suelen ser decorativas
+
+        Fuentes desde un servidor remoto, son fuentes que se
+        encuentran en un servidor y que nosotros descargamos para
+        su uso, la mas famosa es Google fonts
+
+        Siempre que utilicemos fuentes no genericas, debemos poner
+        fuentes genericas de fallback (respaldo)
+
+        Formatos para fuentes
+           True Type Font (TIF) -> fue el primer formato estandar
+
+           Open True Type Font (OTF) -> facilita o implementa la
+           creacion de las curvas
+
+           Web Open Font Format (WOFF) (WOFF2) -> Es un formato
+           mucho mas ligero y mejora el rendimiento. Fucniona a
+           traves de metadatos. WOFF tiene soporte total y WOFF2
+           no funciona en internet explorer
+
+           Scalable Vector Graphics (SVG) -> Para efectos y
+           animaciones sobre el texto, no es recomendable usarlo
+           en el texto generico de la web, tiene muchos problemas 
+
+           Embedded Open Type (E0T) -> primer formato digital
+           propuesto para sitios web y es comprimido. Se quedo
+           como una propuesta pero no paso a ser estandar
+
+           Regla @font-face
+             Esta es la forma de utilizar fuentes que tenemos
+             descargadas y que no traemos de un servidor remoto,
+             cuando usamos google fonts, esto es lo que esta pasando
+             por detras 
+
+             La sintaxis es:
+               @font-face {
+                   font-family: nombre de la familia, se lo
+                   asignamos nosotros;
+                   src: aqui pondremos dos tipos de valores.
+                    Local() -> pondremos el nombre de la fuente
+                    para buscarlo en el ordenador del usuario, de
+                    esa forma podremos evitar descargarla
+                    url() -> si no encontramos esa fuente
+                    procederemos a descargarla
+                    Existe otro valor, menos usado que es format
+                    format() -> este valor lo pasaremos de forma
+                    opcional si queremos ser mas especificos con
+                    la fuente que vamos a buscar a descargar, si
+                    no lo ponemos cogera el primer formato
+                    soportado, si lo ponemos solo usara el que
+                    hemos establecido, y si no lo encuentra no
+                    hara nada.
+               }
+
+               Podemos añadirle mas valores como font-style,
+               font-weigth y font-display (experimental), pero esos
+               son opcionales
+
+          Transformaciones de texto
+              Text-transform: esta propiedad nos permite hacer
+              transformaciones ESTETICAS en nuestro texto
+              Admite los valores:
+                 none: no se aplicara ninguna transformacion
+                 uppercase: el texto se pondra en mayusculas
+                 lowercase: el texto se pondra en minusculas
+                 capitalize: Transforma la primera letra de cada
+                 palabra en mayuscula
+          Adornos en el texto
+             text-decoration: esta propiedad nos permite controlar 
+              la linea que podemos poner en los textos
+              Admite los valores:
+                none: elimina cualquier linea 
+                underline: coloca una linea bajo el texto
+                overline: coloca una linea sobre el texto
+                line-through: coloca una linea tachando el texto
+
+            text-shadow: funciona exactamente igual que box-shadow,
+            con la unica diferencia de que no admite el valor inset
+            ni la expansion de la sombra
+              los valores son:
+                 offsetX: desplazamiento horizontal
+                 offsetY: desplazamiento vertical
+                 blur: desenfoque
+                 color: color, por defecto coge el del texto
+
+            Espaciado en fuentes y textos
+              letter-spacing: establece la separacion entre caracteres,
+              se puede establecer en cualquier medida valida para CSS
+
+              word-spacing: establece la separacion entre palabras,
+              se puede establecer en cualquier medida valida para CSS
+
+              line-heigth: establece el alto de cada linea, se puede 
+              dar una medida concreta o se puede poner un numero que se
+              multiplicara por el font size del texto al que se lo
+              estemos aplicando
+
+              Orientacion del texto
+              writing-mode: establece la direccion del texto
+
+*/
+
+
+body{
+    background-color: #333;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+
+.text{
+    text-transform: uppercase;
+    /* writing-mode: vertical-rl; */
+    word-break: break-all;
+    width: 10px;
+}
+
+.word-container{
+  background-color: lightcoral;
+  height: 100px;
+  text-align: center;
+}
+
+.word{
+  line-height: 100px;
+}
